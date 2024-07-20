@@ -1,0 +1,11 @@
+{% extends 'format.html' %}
+{% block content %}
+   <div class="hero">
+            <div class="main">
+                <form method="get" action="{% url 'results' %}">
+                    <input type="text" class="search-text" name="train" placeholder="Enter Train Number or Name" required />
+                    <br />
+                    <button type="submit" class="s-btn">Search</button>
+                </form>
+    </div>
+{% endblock %}

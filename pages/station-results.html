@@ -1,0 +1,22 @@
+{% extends 'format.html' %}
+{% block content %}
+
+    <h1>Station Search Result - {{station}}</h1><br />
+{% if response.stations %}
+    <table id="customers" style="width:100%">
+    <tr>
+        <th>List of Stations in {{station}}</th>
+        <th>Station Code</th>
+    </tr>
+{% for i in response.stations %}
+    <tr>
+        <td>{{i.stationName}}</td>
+        <td>{{i.stationCode}}</td>
+    </tr>
+{% endfor %}
+    </table>
+{% else %}
+<br />
+<h1>No Station Found - Search Again</h1>
+{% endif %}
+{% endblock %}

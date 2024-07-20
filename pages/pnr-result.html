@@ -1,0 +1,271 @@
+{% extends 'format.html' %}
+{% block content %}
+{% if response.code == 200 %}
+    <h1>PNR Search Result - {{pnr}}</h1>
+                            <br />
+                              <table id="customers" align="left" width="50%">
+                            <td>Boarding Info:</td> 
+                                <tr>
+                                    <tr>
+                                       <th>
+                                          Train ID
+                                       </th>
+                                       <td>
+                                          {{response.data.boardingInfo.trainId}}
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th>
+                                          Station ID
+                                       </th>
+                                       <td>
+                                          {{response.data.boardingInfo.stationId}}
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th>
+                                          Arrival Time
+                                       </th>
+                                       <td>
+                                          {{response.data.boardingInfo.arrivalTime}}
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th>
+                                          Departure Time
+                                       </th>
+                                       <td>
+                                          {{response.data.boardingInfo.departureTime}}
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th>
+                                          Halt Time
+                                       </th>
+                                       <td>
+                                          {{response.data.boardingInfo.haltTime}}
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th>
+                                          Station Name
+                                       </th>
+                                       <td>
+                                          {{response.data.boardingInfo.stationName}}
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th>
+                                          Travelling Day
+                                       </th>
+                                       <td>
+                                          {{response.data.boardingInfo.travellingDay}}
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th>
+                                          Distance
+                                       </th>
+                                       <td>
+                                          {{response.data.boardingInfo.distance}} KM
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th>
+                                          Platform
+                                       </th>
+                                       <td>
+                                          {{response.data.boardingInfo.platform}}
+                                       </td>
+                                    </tr>
+                                 
+                              </table>
+
+                              <table id="customers" align="right" width="50%">
+                            <td>Departure Info:</td> 
+                                    <tr>
+                                       <th>
+                                          Train ID
+                                       </th>
+                                       <td>
+                                          {{response.data.destinationInfo.trainId}}
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th>
+                                          Station ID
+                                       </th>
+                                       <td>
+                                          {{response.data.destinationInfo.stationId}}
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th>
+                                          Arrival Time
+                                       </th>
+                                       <td>
+                                          {{response.data.destinationInfo.arrivalTime}}
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th>
+                                          Departure Time
+                                       </th>
+                                       <td>
+                                          {{response.data.destinationInfo.departureTime}}
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th>
+                                          Halt Time
+                                       </th>
+                                       <td>
+                                          {{response.data.destinationInfo.haltTime}}
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th>
+                                          Station Name
+                                       </th>
+                                       <td>
+                                          {{response.data.destinationInfo.stationName}}
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th>
+                                          Travelling Day
+                                       </th>
+                                       <td>
+                                          {{response.data.destinationInfo.travellingDay}}
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th>
+                                          Distance
+                                       </th>
+                                       <td>
+                                          {{response.data.destinationInfo.distance}} KM
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th>
+                                          Platform
+                                       </th>
+                                       <td>
+                                          {{response.data.destinationInfo.platform}}
+                                       </td>
+                                    </tr>
+                              </table>
+                            <br />
+                              <table id="customers" align="left">
+                            <td>Train Info: </td>
+                                    <tr>
+                                       <th>
+                                          No
+                                       </th>
+                                       <th>
+                                          Train Name
+                                       </th>
+                                       <th>
+                                          Date
+                                       </th>
+                                       <th>
+                                          BoardingDayCount
+                                       </th>
+                                       <th>
+                                          From Station
+                                       </th>
+                                       <th>
+                                          To Station
+                                       </th>
+                                       <th>
+                                          Origin
+                                       </th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                          {{response.data.trainInfo.trainNo}}
+                                       </td><td>
+                                          {{response.data.trainInfo.name}}
+                                       </td><td>
+                                          {{response.data.trainInfo.dt}}
+                                       </td><td>
+                                          {{response.data.trainInfo.boardingDayCount}}
+                                       </td><td>
+                                          {{response.data.trainInfo.fromStationName}}
+                                       </td><td>
+                                          {{response.data.trainInfo.toStationName}}
+                                       </td><td>
+                                          {{response.data.trainInfo.origin}}
+                                       </td>
+                                    </tr>
+                              </table>
+
+                              <table id="customers" align="left">
+                            <td>Passenger Info:</td>
+                                    <tr>
+                                       <th>
+                                          Current Coach
+                                       </th>
+                                       <th>
+                                          Current Berth No
+                                       </th>
+                                    </tr>
+{% for p in response.data.passengerInfo %}
+                                    <tr>
+                                       <td>
+                                          {{p.currentCoach}}
+                                       </td>
+                                       <td>
+                                          {{p.currentBerthNo}}
+                                       </td>
+                                    </tr>
+{% endfor %}
+                              </table>
+                              <table id="customers" align="right">
+                            <td>Seat Info:</td>
+                                    <tr>
+                                       <th>
+                                          Coach
+                                       </th>
+                                       <th>
+                                          Berth
+                                       </th>
+                                       <th>
+                                          No. Of Seats
+                                       </th>
+                                    </tr>
+                                    <tr>
+                                       <td>
+                                          {{response.data.seatInfo.coach}}
+                                       </td>                                       <td>
+                                          {{response.data.seatInfo.berth}}
+                                       </td>                                       <td>
+                                          {{response.data.seatInfo.noOfSeats}}
+                                       </td>
+                                    </tr>
+                              </table>
+                              <table id="customers" align="left">
+                            <td>Train Routes:</td>
+                                <tr>
+                                    <th>Station Name</th>
+                                    <th>Station ID</th>
+                                    <th>Arrival Time</th>
+                                    <th>Departure Time</th>
+                                    <th>Halt Time</th>
+                                    <th>Day</th>
+                                    <th>Distance</th>
+                                    <th>Platform No.</th>
+                                </tr>
+                                <tr>
+                    {% for l in response.data.trainRoutes %}
+                    <tr>
+                        <td>{{l.stationName}}</td><td>{{l.stationId}}</td><td>{{l.arrivalTime}}</td><td>{{l.departureTime}}</td><td>{{l.haltTime}}</td><td>{{l.travellingDay}}</td><td>{{l.distance}}</td><td>{{l.platform}}</td>
+                    </tr>
+                    {% endfor %}
+                                    </tr>
+                              </table>
+{% else %}
+<h1>PNR Not Found - {{pnr}}</h1>
+{% endif %}
+{% endblock %}

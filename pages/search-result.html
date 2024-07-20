@@ -1,0 +1,32 @@
+{% extends 'format.html' %}
+{% block content %}
+
+    <h1>Search Result - {{train}}</h1>
+{% if response %}
+    <table id="customers">
+    <tr>
+        <th>No </th>
+        <th style="width:30%">Train Name</th>
+        <th>Arrives</th>
+        <th>Departs</th>
+        <th>From</th>
+        <th>To</th><br></th>
+        <th>Runs On</th>
+    </tr>
+{% for i in response %}
+    <tr>
+        <td>{{i.train_num}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.data.arriveTime}}</td>
+        <td>{{i.data.departTime}}</td>
+        <td>{{i.train_from}}</td>
+        <td>{{i.train_to}}</td>
+        <td>{% for f,n in i.data.days.items %}{% if n == 1 %}{{f}} {% endif %}{% endfor %}</td>
+    </tr>
+{% endfor %}
+    </table>
+{% else %}
+<br />
+<h1>No Train Found - Search Again</h1>
+{% endif %}
+{% endblock %}
