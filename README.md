@@ -2,10 +2,11 @@
 
 This project is a web-based Railway Enquiry System built using Django. It allows users to check various railway-related information like PNR status, station details, and train schedules.
 
-<img src="https://github.com/user-attachments/assets/88298577-4735-4810-af49-d0230701d626" alt="Image 7" width="275"/>
-<img src="https://github.com/user-attachments/assets/19919d5d-5fd0-4d0d-9329-33cc2409d82e" alt="Image 8" width="300"/>
-<img src="https://github.com/user-attachments/assets/440b24cc-dd1a-4303-bb53-c7387907eb1d" alt="Image 9" width="200"/>
-<img src="https://github.com/user-attachments/assets/6602c089-73f5-4b8b-a690-aa1f8bbe9a71" alt="Image 10" width="150"/>
+<img width="300" alt="1" src="https://github.com/user-attachments/assets/ed64dde5-82d4-4f7c-8c60-ee4b8c95063e">
+<img width="300" alt="2" src="https://github.com/user-attachments/assets/4cabab81-927a-4630-90c1-b44a6f4b4b5c">
+<img width="300" alt="3" src="https://github.com/user-attachments/assets/600f059a-24ae-4773-8767-bcff70d3ad04">
+<img width="300" alt="4" src="https://github.com/user-attachments/assets/bc7806f1-b67f-4e2f-83d1-578866752997">
+<img width="300" alt="5" src="https://github.com/user-attachments/assets/fd9e6bef-cb68-4208-98f8-11cb3a8b44c9">
 
 ## Project Structure
 
