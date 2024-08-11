@@ -11,7 +11,6 @@ This project is a web-based Railway Enquiry System built using Django. It allows
 ## Project Structure
 
 - **RailwayEnquirySystem/**: The main directory for the project.
-  - `db.sqlite3`: SQLite database file.
   - `manage.py`: Django management script.
   - **pages/**: Contains HTML templates for the web application.
     - `about.html`
