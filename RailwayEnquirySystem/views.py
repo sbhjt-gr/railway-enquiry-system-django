@@ -21,10 +21,13 @@ def search(request):
     return render(request, "search.html", data)
 
 def s_result(request):
+    data = {
+        'title': "Search Trains",
+        'train': '',
+        'response': None
+    }
     try:
-
         if request.method == "GET":
-
             train = request.GET['train']
 
             url = "https://trains.p.rapidapi.com/"
@@ -40,14 +43,10 @@ def s_result(request):
 
             res = response.json()
 
-            data = {
-                'title': "Search Trains",
-                'train': train,
-                'response': res
-            }
-    except:
-        pass
-
+            data['train'] = train
+            data['response'] = res
+    except Exception as e:
+        print(f"Error in s_result: {e}")
     return render(request, "search-result.html", data)
 
 def pnr(request):
@@ -57,10 +56,13 @@ def pnr(request):
     return render(request, "pnr.html", data)
 
 def pnr_search(request):
+    data = {
+        'title': "Search By PNR - Railway Enquiry System",
+        'pnr': '',
+        'response': None
+    }
     try:
-
         if request.method=="POST":
-
             pnr = request.POST['pnr']
 
             url = f"https://pnr-status-indian-railway.p.rapidapi.com/pnr-check/{pnr}"
@@ -74,14 +76,10 @@ def pnr_search(request):
 
             res = response.json()
 
-            data = {
-                'title': "Search By PNR - Railway Enquiry System",
-                'pnr': pnr,
-                'response': res
-            }
-    except:
-        pass
-
+            data['pnr'] = pnr
+            data['response'] = res
+    except Exception as e:
+        print(f"Error in pnr_search: {e}")
     return render(request, "pnr-result.html", data)
 
 def station(request):

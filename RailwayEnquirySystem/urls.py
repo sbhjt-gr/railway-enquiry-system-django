@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from django.conf.urls import handler404
 
 urlpatterns = [
     path('', views.homepage, name = "homepage"),
@@ -30,3 +31,8 @@ urlpatterns = [
     path('station-search/', views.station_result, name = 'station-results'),
     path('about/', views.about, name = 'about')
 ]
+
+handler404 = 'RailwayEnquirySystem.views.custom_404'
+
+def custom_404(request, exception):
+    return render(request, '404.html', status=404)
